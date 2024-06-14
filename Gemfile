@@ -68,6 +68,9 @@ group :test do
   # Webmock is a library for stubbing http request (with Faraday in the case)
   gem 'webmock', '~> 3.14'
 
+  # Provides RSpec- and Minitest-compatible one-liners to test common Rails
+  # functionality that, if written by hand, would be much longer, more complex,
+  # and error-prone.
   gem 'shoulda-matchers', '~> 5.1'
 
   # Generates test vs. code coverage reports

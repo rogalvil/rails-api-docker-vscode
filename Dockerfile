@@ -92,6 +92,11 @@ FROM development-base AS development
 # Change to root user to install the development packages:
 USER root
 
+# Add Github CLI keys
+RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+    && chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+
 # Install sudo, along with any other tool required at development phase:
 RUN apt-get install -y --no-install-recommends \
     # Adding bash autocompletion as git without autocomplete is a pain...
@@ -146,6 +151,10 @@ RUN bundle config unset --local without
 # Install the full gem list:
 RUN bundle install
 
+# Fix Git's 'fatal: detected dubious ownership in repository directory' error
+RUN git config --global --add safe.directory /workspaces/rails-api-docker-vscode
+
+
 # Stage 5: Builder =============================================================
 # In this stage we'll add the rest of the code, compile assets, and perform a
 # cleanup for the releasable image.
@@ -161,9 +170,6 @@ ARG DEVELOPER_USERNAME=you
 
 # Copy the full contents of the project:
 COPY --chown=${DEVELOPER_USERNAME} . /workspaces/rails-api-docker-vscode/
-
-# Compile the assets:
-RUN RAILS_ENV=production SECRET_KEY_BASE=10167c7f7654ed02b3557b05b88ece rails assets:precompile
 
 # Configure bundler to exclude the gems from the "development" and "test" groups
 # from the installed gemset, which should set them out to remove on cleanup:
