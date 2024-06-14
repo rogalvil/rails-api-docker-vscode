@@ -21,7 +21,7 @@ system 'find . -type f -not -path "./tmp/*" -not -path "./.git/*" ' \
        '{} \;'
 
 if File.exist?('config/credentials.yml.enc')
-  system 'rm config/credentials.yml.enc'
+  system 'rm -rf config/credentials.yml.enc'
 end
 
 system 'EDITOR="noop" rails credentials:edit'
