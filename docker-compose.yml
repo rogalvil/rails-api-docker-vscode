@@ -51,7 +51,6 @@ services:
     # Link to our postgres and redis services, so they can be visible from our
     # app service containers:
     depends_on:
-      - chrome
       - postgres
 
     # The command we want to execute by default when running the container
@@ -64,11 +63,6 @@ services:
       RAILS_LOG_TO_STDOUT: "true"
       DEBIAN_FRONTEND: dialog
       RAILS_ENV: test
-
-      # Tells the test suite to use the "chrome" service instead of a local
-      # chrome install:
-      CHROME_URL: http://chrome:3333
-      CHROME_PUBLIC_URL: ${RAILS_DOCKER_VSCODE_CHROME_PUBLIC_URL:-http://localhost:3333}
 
       DATABASE_URL:
         postgres://postgres:5432/?encoding=unicode

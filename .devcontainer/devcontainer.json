@@ -35,7 +35,7 @@
 
   // Only bring up the services required by the development container - VSCode
   // will bring up all services unless this is configured:
-  "runServices": ["postgres", "chrome"],
+  "runServices": ["postgres"],
 
   "workspaceFolder": "/workspaces/rails-api-docker-vscode",
 
