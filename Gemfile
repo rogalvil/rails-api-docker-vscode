@@ -38,10 +38,41 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'rspec-rails', '~> 6.0.0'
 end
 
 group :development do
+  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "web-console"
+
+  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+  # gem "rack-mini-profiler"
+
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  # gem "spring"
+  gem 'rubocop', '~> 1.29', require: false
+
+  # IDE tools for code completion, inline documentation, and static analysis
+  gem 'solargraph', '~> 0.45', require: false
+
+  # Helps us to format ERB files, so our eyes don't bleed :)
+  gem 'htmlbeautifier', '~> 1.4', require: false
 end
 
+group :test do
+  # Webmock is a library for stubbing http request (with Faraday in the case)
+  gem 'webmock', '~> 3.14'
+
+  # Provides RSpec- and Minitest-compatible one-liners to test common Rails
+  # functionality that, if written by hand, would be much longer, more complex,
+  # and error-prone.
+  gem 'shoulda-matchers', '~> 5.1'
+
+  # Generates test vs. code coverage reports
+  gem 'simplecov', '~> 0.21.2', require: false
+end
