@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-ruby '3.3.3'
+ruby '3.3.4'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
@@ -46,9 +46,6 @@ group :development, :test do
 
   # RSpec is a testing tool for Ruby, created for behavior-driven development (BDD)
   gem 'rspec-rails', '~> 6.1', '>= 6.1.2'
-
-  # JSON API testing suite for RSpec
-  gem 'jsonapi-rspec'
 end
 
 group :development do
@@ -80,3 +77,6 @@ group :test do
   # Generates test vs. code coverage reports
   gem 'simplecov', '~> 0.22.0', require: false
 end
+
+# Use Active Model Serializers for JSON serialization
+gem 'active_model_serializers', '~> 0.10.14'

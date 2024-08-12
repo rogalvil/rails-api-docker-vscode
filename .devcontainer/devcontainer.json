@@ -44,24 +44,22 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        // Integrates ESLint into VS Code:
-        "dbaeumer.vscode-eslint",
-
-        // VSCode Ruby rdbg Debugger
+        // Ruby rdbg Debugger:
         "KoichiSasada.vscode-rdbg",
 
         // Provides enhanced Ruby language and debugging support for Visual Studio
         // Code:
         "rebornix.ruby",
 
-        // execute rubocop for current Ruby code.
+        // Execute rubocop for current Ruby code:
         "misogi.ruby-rubocop",
 
-        // A language server that provides intellisense, code completion, and inline
-        // documentation for Ruby:
+        // A language server that provides intellisense, code completion, and
+        // inline documentation for Ruby:
         "castwide.solargraph",
 
-        // Search modules, class and methods in ruby files using vscode go to symbols
+        // Search modules, class and methods in ruby files using vscode go to
+        // symbols:
         "miguel-savignano.ruby-symbols",
 
         // Git Lens:
@@ -73,19 +71,19 @@
         // Use GitHub Copilot when available:
         "github.copilot",
 
-        // XML Language Support by Red Hat
+        // XML Language Support by Red Hat:
         "redhat.vscode-xml",
 
-        // Wisely add "end" in Ruby.
+        // Wisely add "end" in Ruby:
         "kaiwood.endwise",
 
-        // Auto Close Tag
+        // Auto Close Tag:
         "formulahendry.auto-close-tag",
 
-        // Auto Rename Tag
+        // Auto Rename Tag:
         "formulahendry.auto-rename-tag",
 
-        // Code formatter using prettier
+        // Code formatter using prettier:
         "esbenp.prettier-vscode"
       ]
     }
