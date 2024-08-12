@@ -6,9 +6,7 @@ A summary of why changes are necessary
 
 Enumerate the individual features/changes to better explain what changed
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
+- [ ] Feature
 
 ### Checklist:
 
